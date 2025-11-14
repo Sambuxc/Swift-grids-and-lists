@@ -7,20 +7,19 @@
 import SwiftUI
 
 struct TitleView: View {
-    var name: String
-    var image: String
+    var content: Mushroom
 
     var body: some View {
         VStack(alignment: .center, spacing: 0) {
-            Image(image)
+            Image(content.image)
                 .resizable()
                 .frame(width: 90, height: 90)
                 .aspectRatio(contentMode: .fit)
-            Text(name)
+            Text(content.name)
                 .font(.title)
                 .scaledToFit()
                 .minimumScaleFactor(0.5)
-                .textSelection(.enabled)
         }
+        .textSelection(.enabled)
     }
 }

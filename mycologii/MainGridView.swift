@@ -19,8 +19,8 @@ let columns: [GridItem] = [GridItem(.flexible()), GridItem(.flexible()), GridIte
     
     var body: some View {
         LazyVGrid(columns: columns) {
-            ForEach(MockData.frameworks, id: \.self) { mushroom in
-                TitleView(name: mushroom.name, image: mushroom.image)
+            ForEach(MockData.frameworks) { mushroom in
+                TitleView(content: mushroom)
             }
         }
     }
