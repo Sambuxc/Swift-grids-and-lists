@@ -8,17 +8,26 @@
 import SwiftUI
 
 struct MainGridView: View {
-let columns: [GridItem] = [GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible())]
-    
+    let columns: [GridItem] = [
+        GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible()),
+    ]
+
     var body: some View {
-        LazyVGrid(columns: columns) {
-            ForEach(MockData.frameworks) { mushroom in
-                TitleView(content: mushroom)
+        ZStack {
+            NavigationView {
+                ScrollView {
+                    LazyVGrid(columns: columns) {
+                        ForEach(MockData.frameworks) { mushroom in
+                            TitleView(content: mushroom)
+                        }
+                    }
+                }
+                .navigationTitle("🪸 Mycologii")
             }
         }
     }
 }
 
 #Preview {
-    MainGridView()
+    MainGridView().preferredColorScheme(.dark)
 }
