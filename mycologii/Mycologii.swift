@@ -8,10 +8,10 @@
 import SwiftUI
 
 @main
-struct iMushroomApp: App {
+struct Mycologii: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MainGridView()
         }
     }
 }
