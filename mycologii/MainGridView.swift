@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct MainGridView: View {
+    @State private var sheetDetail: Bool = false
+    
     let columns: [GridItem] = [
         GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible()),
     ]
@@ -19,6 +21,18 @@ struct MainGridView: View {
                     LazyVGrid(columns: columns) {
                         ForEach(MockData.frameworks) { mushroom in
                             TitleView(content: mushroom)
+                                .onTapGesture {
+                                    sheetDetail.toggle()
+                                }
+                                .sheet(
+                                    isPresented: $sheetDetail,
+                                ) {
+                                    
+                                    TitleView(content: mushroom)
+                                    Text(mushroom.desc)
+                                        .padding()
+                                    Text("Read more")
+                                }
                         }
                     }
                 }
