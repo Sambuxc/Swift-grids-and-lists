@@ -7,7 +7,7 @@
 import SwiftUI
 
 struct TitleView: View {
-    var content: Mushroom
+    var content: Content
 
     var body: some View {
         VStack(alignment: .center, spacing: 0) {

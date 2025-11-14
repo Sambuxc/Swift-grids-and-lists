@@ -10,13 +10,6 @@ import SwiftUI
 struct MainGridView: View {
 let columns: [GridItem] = [GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible())]
     
-    let aShroom = Mushroom(
-        name: "Amanita Muscaria",
-        image: "app-clip",
-        url: "",
-        desc: ""
-    )
-    
     var body: some View {
         LazyVGrid(columns: columns) {
             ForEach(MockData.frameworks) { mushroom in
