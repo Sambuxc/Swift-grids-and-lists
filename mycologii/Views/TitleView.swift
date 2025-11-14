@@ -20,6 +20,6 @@ struct TitleView: View {
                 .scaledToFit()
                 .minimumScaleFactor(0.5)
         }
-        .textSelection(.enabled)
+        .padding()
     }
 }
