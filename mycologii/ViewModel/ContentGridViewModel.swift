@@ -11,9 +11,12 @@ import Combine
 final class ContentGridViewModel: ObservableObject {
     @Published var selectedContent: Content? {
         didSet {
+            // Once the detailView content gets set,
+            // then update the showing state to true
             isShowingDetailView = true
         }
     }
+    
     @Published var isShowingDetailView: Bool = false
 
     init(selectedContent: Content? = nil) {
