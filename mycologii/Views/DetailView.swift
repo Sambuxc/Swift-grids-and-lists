@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct DetailView: View {
+    @Binding var isShowingDetailView: Bool
     var content: Content
     
     var body: some View {
@@ -16,9 +17,9 @@ struct DetailView: View {
                 Spacer()
                 
                 Button {
-                    
+                    isShowingDetailView = false
                 } label: {
-                    Image(systemName: "xmark")
+                    Image(systemName: "arrow.up.arrow.down")
                         .foregroundColor(Color(.label))
                         .imageScale(.large)
                         .frame(width: 44, height: 44)
@@ -42,5 +43,5 @@ struct DetailView: View {
 }
 
 #Preview {
-    DetailView(content: MockData.mushrooms[0])
+    DetailView(isShowingDetailView: .constant(true), content: MockData.mushrooms[0])
 }

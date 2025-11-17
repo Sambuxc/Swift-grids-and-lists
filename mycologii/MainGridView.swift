@@ -22,12 +22,17 @@ struct MainGridView: View {
                         ForEach(MockData.mushrooms) { mushroom in
                             TitleView(content: mushroom)
                                 .onTapGesture {
+                                    // tapping on the TitleView sets the content
+                                    // which triggers showing the sheet by using `didSet` in ViewModel
                                     viewModel.selectedContent = mushroom
                                 }
                                 .sheet(
                                     isPresented: $viewModel.isShowingDetailView,
                                 ) {
-                                    DetailView(content: viewModel.selectedContent ?? MockData.sampleContent)
+                                    DetailView(
+                                        isShowingDetailView: $viewModel.isShowingDetailView,
+                                        content: viewModel.selectedContent ?? MockData.sampleContent
+                                    )
                                 }
                         }
                     }
