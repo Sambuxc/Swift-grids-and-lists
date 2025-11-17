@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct MainGridView: View {
-    @State private var sheetDetail: Bool = false
+    @StateObject private var viewModel = ContentGridViewModel()
     
     let columns: [GridItem] = [
         GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible()),
@@ -22,12 +22,12 @@ struct MainGridView: View {
                         ForEach(MockData.mushrooms) { mushroom in
                             TitleView(content: mushroom)
                                 .onTapGesture {
-                                    sheetDetail.toggle()
+                                    viewModel.selectedContent = mushroom
                                 }
                                 .sheet(
-                                    isPresented: $sheetDetail,
+                                    isPresented: $viewModel.isShowingDetailView,
                                 ) {
-                                    DetailView(content: mushroom)
+                                    DetailView(content: viewModel.selectedContent ?? MockData.sampleContent)
                                 }
                         }
                     }
