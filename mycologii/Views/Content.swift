@@ -156,4 +156,11 @@ struct MockData {
                 "Easily build widgets and make them available across iOS, iPadOS, and macOS using the WidgetKit framework and the new widget API for SwiftUI. Widgets now come in multiple sizes, and users can visit the new widget gallery to search, preview sizes, and place them anywhere on the Home screen to access important details at a glance.\n\nThey can also add Smart Stacks — sets of widgets that use on-device intelligence to surface the right widget at the right moment, based on factors like time, location, and activity."
         ),
     ]
+    
+    static let sampleContent = Content(
+        name: "Sample Content",
+        image: "placeholder",
+        url: "google.com/search?q=could+not+find",
+        desc: "Sample content because data is unavailable."
+    )
 }
