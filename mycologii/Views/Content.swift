@@ -13,89 +13,147 @@ struct Content: Hashable, Identifiable {
     let image: String
     let url: String
     let desc: String
+//    let taxonomy: String
 }
 
 struct MockData {
-    static let frameworks = [
-        Content(name: "Strophariaceae",
-                  image: "stroph-icon",
-                  url: "https://en.wikipedia.org/wiki/Strophariaceae",
-                  desc: "The Strophariaceae are a family of fungi in the order Agaricales. Under an older classification, the family covered 18 genera and 1316 species.[1] The species of Strophariaceae have red-brown to dark brown spore prints, while the spores themselves are smooth and have an apical germ pore. These agarics are also characterized by having a cutis-type pileipellis. Ecologically, all species in this group are saprotrophs, growing on various kinds of decaying organic matter. The family was circumscribed in 1946 by mycologists Rolf Singer and Alexander H. Smith."),
+    static let mushrooms: [Content] = [
+        Content(
+            name: "Strophariaceae",
+            image: "stroph-icon",
+            url: "https://en.wikipedia.org/wiki/Strophariaceae",
+            desc:
+                "The Strophariaceae are a family of fungi in the order Agaricales. Under an older classification, the family covered 18 genera and 1316 species.[1] The species of Strophariaceae have red-brown to dark brown spore prints, while the spores themselves are smooth and have an apical germ pore. These agarics are also characterized by having a cutis-type pileipellis. Ecologically, all species in this group are saprotrophs, growing on various kinds of decaying organic matter. The family was circumscribed in 1946 by mycologists Rolf Singer and Alexander H. Smith.",
+//            taxonomy: "Family",
+        ),
         
-        Content(name: "ARKit",
-                  image: "arkit",
-                  url: "https://developer.apple.com/augmented-reality/arkit",
-                  desc: "ARKit 4 introduces a brand-new Depth API, creating a new way to access the detailed depth information gathered by the LiDAR Scanner on iPhone 12 Pro, iPhone 12 Pro Max, and iPad Pro.\n\nLocation Anchors leverages the higher-resolution data in Apple Maps to place AR experiences at a specific point in the world in your iPhone and iPad apps. And support for face tracking extends to all devices with the Apple Neural Engine and a front-facing camera, so even more users can experience the joy of AR in photos and videos."),
-        
-        Content(name: "CarPlay",
-                  image: "carplay",
-                  url: "https://developer.apple.com/carplay",
-                  desc: "A smarter, safer way to use your iPhone in the car, CarPlay takes the things you want to do with your iPhone while driving and puts them on your car’s built-in display.\n\nYou can get directions, make calls, send and receive messages, and listen to music, all while staying focused on the road."),
-        
-        Content(name: "Catalyst",
-                  image: "catalyst",
-                  url: "https://developer.apple.com/mac-catalyst",
-                  desc: "Native Mac apps built with Mac Catalyst can share code with your iPad apps, and you can add more features just for Mac. In macOS Big Sur, you can create even more powerful versions of your apps and take advantage of every pixel on the screen by running them at native Mac resolution.\n\nApps built with Mac Catalyst can now be fully controlled using just the keyboard, access more iOS frameworks, and take advantage of the all-new look of macOS Big Sur. There’s never been a better time to turn your iPad app into a powerful Mac app."),
+        Content(
+            name: "Psilocybin",
+            image: "psilocybin-icon",
+            url: "https://en.wikipedia.org/wiki/Psilocybin",
+            desc:
+                "Psilocybin mushrooms grow throughout most of the world, and can be found in both fields and forests. Psilocybin mushrooms are saprophytes - they grow on dead plant material. Before the impact of human civilisation, psilocybin species were largely restricted to narrowly defined ecosystems. Many thrive after ecological catastrophes. Landslides, floods, hurricanes, and volcanoes all create supportive habitats for many Psilocybe mushrooms. This peculiar affection for disturbed habitats enables them to travel, following streams of debris.",
+//            taxonomy: "Species",
+        ),
 
+        Content(
+            name: "ARKit",
+            image: "arkit",
+            url: "https://developer.apple.com/augmented-reality/arkit",
+            desc:
+                "ARKit 4 introduces a brand-new Depth API, creating a new way to access the detailed depth information gathered by the LiDAR Scanner on iPhone 12 Pro, iPhone 12 Pro Max, and iPad Pro.\n\nLocation Anchors leverages the higher-resolution data in Apple Maps to place AR experiences at a specific point in the world in your iPhone and iPad apps. And support for face tracking extends to all devices with the Apple Neural Engine and a front-facing camera, so even more users can experience the joy of AR in photos and videos."
+        ),
 
-        Content(name: "ClassKit",
-                  image: "classkit",
-                  url: "https://developer.apple.com/classkit",
-                  desc: "The many great learning apps available in the App Store are an integral part of the teaching and learning experience in schools. By adopting ClassKit, your app will work with Schoolwork, a powerful iPad app for teachers and students to help keep track of assignments and student progress.\n\nYou can help teachers discover assignable activities in your app, take students directly to the right activity with a single tap, and securely and privately share progress data with teachers to help them personalize instruction."),
-        
-        Content(name: "CloudKit",
-                  image: "cloudkit",
-                  url: "https://developer.apple.com/icloud/cloudkit",
-                  desc: "Store your app’s data in iCloud and keep everything up to date across apps and on the web with CloudKit JS. With up to 1PB of free storage for each app, it’s never been easier to build and grow your apps using CloudKit."),
-        
-        Content(name: "Core ML",
-                  image: "coreml",
-                  url: "https://developer.apple.com/machine-learning",
-                  desc: "Create intelligent features and enable new experiences for your apps by leveraging powerful on-device machine learning.\n\nLearn how to build, train, and deploy machine learning models into your iPhone, iPad, Apple Watch, and Mac apps."),
-        
-        Content(name: "HealthKit",
-                  image: "healthkit",
-                  url: "https://developer.apple.com/health-fitness",
-                  desc: "Integrate HealthKit into your health and fitness apps for iOS and watchOS to create a more seamless user experience.\n\nWhen a customer provides permission for your app to read and write health and activity data to their Health app, your app becomes a valuable data source and can deliver deeply informed health and fitness solutions."),
-        
-        Content(name: "Metal",
-                  image: "metal",
-                  url: "https://developer.apple.com/metal",
-                  desc: "Metal provides near-direct access to the graphics processing unit (GPU), enabling you to maximize the graphics and compute potential of your apps on iOS, macOS, and tvOS.\n\nBuilding on an approachable, low-overhead architecture with precompiled GPU shaders, fine-grained resource control, and multithreading support, Metal further evolves support for GPU-driven command creation, simplifies working with the array of Metal-capable GPUs, and lets you tap into Pro power of Mac Pro and Pro Display XDR."),
-        
-        Content(name: "SF Symbols",
-                  image: "sf-symbols",
-                  url: "https://developer.apple.com/sf-symbols",
-                  desc: "With over 2,400 configurable symbols, SF Symbols is designed to integrate seamlessly with San Francisco, the system font for Apple platforms. Each symbol comes in a wide range of weights and scales that automatically align with text labels, and supports Dynamic Type and the Bold Text accessibility feature.\n\nYou can also export symbols and edit them in vector graphics editing tools to create custom symbols with shared design characteristics and accessibility features."),
-        
-        Content(name: "SiriKit",
-                  image: "sirikit",
-                  url: "https://developer.apple.com/siri",
-                  desc: "Siri is the world’s most popular intelligent assistant, and now has an all new compact design. With SiriKit and Shortcuts, your apps can help users get things done with just their voice, intelligent suggestions, or the Shortcuts app.\n\nYour apps can now also integrate with more platforms with Shortcuts on watchOS 7, SiriKit Music on HomePod, and SiriKit Media on Apple TV."),
-        
-        Content(name: "SpriteKit",
-                  image: "spritekit",
-                  url: "https://developer.apple.com/spritekit",
-                  desc: "The SpriteKit framework makes it easy to create high-performance, battery-efficient 2D games.\n\nWith support for custom OpenGL ES shaders and lighting, integration with SceneKit, and advanced new physics effects and animations, you can add force fields, detect collisions, and generate new lighting effects in your games."),
-        
-        Content(name: "SwiftUI",
-                  image: "swiftui",
-                  url: "https://developer.apple.com/xcode/swiftui",
-                  desc: "SwiftUI is an innovative, exceptionally simple way to build user interfaces across all Apple platforms with the power of Swift. Build user interfaces for any Apple device using just one set of tools and APIs.\n\nWith a declarative Swift syntax that’s easy to read and natural to write, SwiftUI works seamlessly with new Xcode design tools to keep your code and design perfectly in sync. Automatic support for Dynamic Type, Dark Mode, localization, and accessibility means your first line of SwiftUI code is already the most powerful UI code you’ve ever written."),
-        
-        Content(name: "Test Flight",
-                  image: "test-flight",
-                  url: "https://developer.apple.com/testflight",
-                  desc: "TestFlight makes it easy to invite users to test your apps and app clip experiences and collect valuable feedback before releasing your apps on the App Store.\n\nYou can invite up to 10,000 testers using just their email address or by sharing a public link."),
-        
-        Content(name: "Wallet",
-                  image: "wallet",
-                  url: "https://developer.apple.com/wallet/get-started",
-                  desc: "The Wallet app on iPhone, iPod touch, and Apple Watch allows users to easily manage payment cards, boarding passes, tickets, gift cards, and other passes.\n\nWallet is time and location enabled, so passes can be configured to display on the user’s device at the appropriate moment, like when the user reaches the airport or walks into a store.\n\nPasses can also be updated with push notifications so, if details change, you can notify the user and they can simply tap the notification to view the updated pass."),
-        
-        Content(name: "WidgetKit",
-                  image: "widgetkit",
-                  url: "https://developer.apple.com/widgets",
-                  desc: "Easily build widgets and make them available across iOS, iPadOS, and macOS using the WidgetKit framework and the new widget API for SwiftUI. Widgets now come in multiple sizes, and users can visit the new widget gallery to search, preview sizes, and place them anywhere on the Home screen to access important details at a glance.\n\nThey can also add Smart Stacks — sets of widgets that use on-device intelligence to surface the right widget at the right moment, based on factors like time, location, and activity.")
+        Content(
+            name: "CarPlay",
+            image: "carplay",
+            url: "https://developer.apple.com/carplay",
+            desc:
+                "A smarter, safer way to use your iPhone in the car, CarPlay takes the things you want to do with your iPhone while driving and puts them on your car’s built-in display.\n\nYou can get directions, make calls, send and receive messages, and listen to music, all while staying focused on the road."
+        ),
+
+        Content(
+            name: "Catalyst",
+            image: "catalyst",
+            url: "https://developer.apple.com/mac-catalyst",
+            desc:
+                "Native Mac apps built with Mac Catalyst can share code with your iPad apps, and you can add more features just for Mac. In macOS Big Sur, you can create even more powerful versions of your apps and take advantage of every pixel on the screen by running them at native Mac resolution.\n\nApps built with Mac Catalyst can now be fully controlled using just the keyboard, access more iOS frameworks, and take advantage of the all-new look of macOS Big Sur. There’s never been a better time to turn your iPad app into a powerful Mac app."
+        ),
+
+        Content(
+            name: "ClassKit",
+            image: "classkit",
+            url: "https://developer.apple.com/classkit",
+            desc:
+                "The many great learning apps available in the App Store are an integral part of the teaching and learning experience in schools. By adopting ClassKit, your app will work with Schoolwork, a powerful iPad app for teachers and students to help keep track of assignments and student progress.\n\nYou can help teachers discover assignable activities in your app, take students directly to the right activity with a single tap, and securely and privately share progress data with teachers to help them personalize instruction."
+        ),
+
+        Content(
+            name: "CloudKit",
+            image: "cloudkit",
+            url: "https://developer.apple.com/icloud/cloudkit",
+            desc:
+                "Store your app’s data in iCloud and keep everything up to date across apps and on the web with CloudKit JS. With up to 1PB of free storage for each app, it’s never been easier to build and grow your apps using CloudKit."
+        ),
+
+        Content(
+            name: "Core ML",
+            image: "coreml",
+            url: "https://developer.apple.com/machine-learning",
+            desc:
+                "Create intelligent features and enable new experiences for your apps by leveraging powerful on-device machine learning.\n\nLearn how to build, train, and deploy machine learning models into your iPhone, iPad, Apple Watch, and Mac apps."
+        ),
+
+        Content(
+            name: "HealthKit",
+            image: "healthkit",
+            url: "https://developer.apple.com/health-fitness",
+            desc:
+                "Integrate HealthKit into your health and fitness apps for iOS and watchOS to create a more seamless user experience.\n\nWhen a customer provides permission for your app to read and write health and activity data to their Health app, your app becomes a valuable data source and can deliver deeply informed health and fitness solutions."
+        ),
+
+        Content(
+            name: "Metal",
+            image: "metal",
+            url: "https://developer.apple.com/metal",
+            desc:
+                "Metal provides near-direct access to the graphics processing unit (GPU), enabling you to maximize the graphics and compute potential of your apps on iOS, macOS, and tvOS.\n\nBuilding on an approachable, low-overhead architecture with precompiled GPU shaders, fine-grained resource control, and multithreading support, Metal further evolves support for GPU-driven command creation, simplifies working with the array of Metal-capable GPUs, and lets you tap into Pro power of Mac Pro and Pro Display XDR."
+        ),
+
+        Content(
+            name: "SF Symbols",
+            image: "sf-symbols",
+            url: "https://developer.apple.com/sf-symbols",
+            desc:
+                "With over 2,400 configurable symbols, SF Symbols is designed to integrate seamlessly with San Francisco, the system font for Apple platforms. Each symbol comes in a wide range of weights and scales that automatically align with text labels, and supports Dynamic Type and the Bold Text accessibility feature.\n\nYou can also export symbols and edit them in vector graphics editing tools to create custom symbols with shared design characteristics and accessibility features."
+        ),
+
+        Content(
+            name: "SiriKit",
+            image: "sirikit",
+            url: "https://developer.apple.com/siri",
+            desc:
+                "Siri is the world’s most popular intelligent assistant, and now has an all new compact design. With SiriKit and Shortcuts, your apps can help users get things done with just their voice, intelligent suggestions, or the Shortcuts app.\n\nYour apps can now also integrate with more platforms with Shortcuts on watchOS 7, SiriKit Music on HomePod, and SiriKit Media on Apple TV."
+        ),
+
+        Content(
+            name: "SpriteKit",
+            image: "spritekit",
+            url: "https://developer.apple.com/spritekit",
+            desc:
+                "The SpriteKit framework makes it easy to create high-performance, battery-efficient 2D games.\n\nWith support for custom OpenGL ES shaders and lighting, integration with SceneKit, and advanced new physics effects and animations, you can add force fields, detect collisions, and generate new lighting effects in your games."
+        ),
+
+        Content(
+            name: "SwiftUI",
+            image: "swiftui",
+            url: "https://developer.apple.com/xcode/swiftui",
+            desc:
+                "SwiftUI is an innovative, exceptionally simple way to build user interfaces across all Apple platforms with the power of Swift. Build user interfaces for any Apple device using just one set of tools and APIs.\n\nWith a declarative Swift syntax that’s easy to read and natural to write, SwiftUI works seamlessly with new Xcode design tools to keep your code and design perfectly in sync. Automatic support for Dynamic Type, Dark Mode, localization, and accessibility means your first line of SwiftUI code is already the most powerful UI code you’ve ever written."
+        ),
+
+        Content(
+            name: "Test Flight",
+            image: "test-flight",
+            url: "https://developer.apple.com/testflight",
+            desc:
+                "TestFlight makes it easy to invite users to test your apps and app clip experiences and collect valuable feedback before releasing your apps on the App Store.\n\nYou can invite up to 10,000 testers using just their email address or by sharing a public link."
+        ),
+
+        Content(
+            name: "Wallet",
+            image: "wallet",
+            url: "https://developer.apple.com/wallet/get-started",
+            desc:
+                "The Wallet app on iPhone, iPod touch, and Apple Watch allows users to easily manage payment cards, boarding passes, tickets, gift cards, and other passes.\n\nWallet is time and location enabled, so passes can be configured to display on the user’s device at the appropriate moment, like when the user reaches the airport or walks into a store.\n\nPasses can also be updated with push notifications so, if details change, you can notify the user and they can simply tap the notification to view the updated pass."
+        ),
+
+        Content(
+            name: "WidgetKit",
+            image: "widgetkit",
+            url: "https://developer.apple.com/widgets",
+            desc:
+                "Easily build widgets and make them available across iOS, iPadOS, and macOS using the WidgetKit framework and the new widget API for SwiftUI. Widgets now come in multiple sizes, and users can visit the new widget gallery to search, preview sizes, and place them anywhere on the Home screen to access important details at a glance.\n\nThey can also add Smart Stacks — sets of widgets that use on-device intelligence to surface the right widget at the right moment, based on factors like time, location, and activity."
+        ),
     ]
 }
