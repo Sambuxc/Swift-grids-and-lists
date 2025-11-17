@@ -19,7 +19,7 @@ struct MainGridView: View {
             NavigationView {
                 ScrollView {
                     LazyVGrid(columns: columns) {
-                        ForEach(MockData.frameworks) { mushroom in
+                        ForEach(MockData.mushrooms) { mushroom in
                             TitleView(content: mushroom)
                                 .onTapGesture {
                                     sheetDetail.toggle()
@@ -27,11 +27,7 @@ struct MainGridView: View {
                                 .sheet(
                                     isPresented: $sheetDetail,
                                 ) {
-                                    
-                                    TitleView(content: mushroom)
-                                    Text(mushroom.desc)
-                                        .padding()
-                                    Text("Read more")
+                                    DetailView(content: mushroom)
                                 }
                         }
                     }
