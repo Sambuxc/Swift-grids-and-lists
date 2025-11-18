@@ -43,5 +43,5 @@ struct DetailView: View {
 }
 
 #Preview {
-    DetailView(isShowingDetailView: .constant(true), content: MockData.mushrooms[0])
+    DetailView(isShowingDetailView: .constant(true), content: MockData.sampleContent)
 }
