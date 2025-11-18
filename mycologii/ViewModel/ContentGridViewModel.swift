@@ -21,6 +21,10 @@ final class ContentGridViewModel: ObservableObject {
     }
     
     @Published var isShowingDetailView: Bool = false
+    
+    let columns: [GridItem] = [
+        GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible()),
+    ]
 
     init(selectedContent: Content? = nil) {
         self.selectedContent = selectedContent

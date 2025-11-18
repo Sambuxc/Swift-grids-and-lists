@@ -9,16 +9,12 @@ import SwiftUI
 
 struct MainGridView: View {
     @StateObject private var viewModel = ContentGridViewModel()
-    
-    let columns: [GridItem] = [
-        GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible()),
-    ]
 
     var body: some View {
         ZStack {
             NavigationView {
                 ScrollView {
-                    LazyVGrid(columns: columns) {
+                    LazyVGrid(columns: viewModel.columns) {
                         ForEach(MockData.mushrooms) { mushroom in
                             TitleView(content: mushroom)
                                 .onTapGesture {
