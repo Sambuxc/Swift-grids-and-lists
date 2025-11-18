@@ -9,10 +9,11 @@ import SwiftUI
 
 struct ButtonLink: View {
     var title: String
+    @Binding var toggles: Bool
     
     var body: some View {
         Button {
-            
+            $toggles.wrappedValue.toggle()
         } label: {
             Text(title)
                 .font(.title2)
@@ -25,5 +26,7 @@ struct ButtonLink: View {
 }
 
 #Preview {
-    ButtonLink(title: "Test title")
+    @Previewable @State var test: Bool = false
+    
+    ButtonLink(title: "Test title", toggles: $test)
 }
