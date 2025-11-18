@@ -14,19 +14,7 @@ struct DetailView: View {
     
     var body: some View {
         VStack() {
-            HStack() {
-                Spacer()
-                
-                Button {
-                    isShowingDetailView = false
-                } label: {
-                    Image(systemName: "arrow.up.arrow.down")
-                        .foregroundColor(Color(.label))
-                        .imageScale(.large)
-                        .frame(width: 44, height: 44)
-                }
-                .padding()
-            }
+            DismissButton(isShowing: $isShowingDetailView)
             
             Spacer()
             
