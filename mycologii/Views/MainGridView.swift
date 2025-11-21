@@ -33,7 +33,7 @@ struct MainGridView: View {
                         }
                     }
                 }
-                .navigationTitle("🪸 Mycologii")
+                .navigationTitle("📚 Informative")
             }
         }
     }

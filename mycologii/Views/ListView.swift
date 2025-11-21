@@ -25,7 +25,7 @@ struct ListView: View {
                         }
                 }
             }
-            .navigationTitle("🪸 Mycologii")
+            .navigationTitle("📚 Information")
         }
         .accentColor(.white)
     }
