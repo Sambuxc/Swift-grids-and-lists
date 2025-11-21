@@ -8,16 +8,19 @@
 import SwiftUI
 
 struct DetailView: View {
+    @StateObject private var appSettingsModel = AppSettingsModel()
     @Binding var isShowingDetailView: Bool
     @State var isShowingSafariView: Bool = false
     var content: Content
     
     var body: some View {
         VStack() {
-            DismissButton(isShowing: $isShowingDetailView)
+            if appSettingsModel.isGridMode {
+                DismissButton(isShowing: $isShowingDetailView)
+            }
             
             Spacer()
-            
+        
             TitleView(content: content)
             
             Text(content.desc)
@@ -27,14 +30,23 @@ struct DetailView: View {
             Spacer()
             
             ButtonLink(title: "Read more", toggles: $isShowingSafariView)
+            // ButtonLink(title: "Toggle Mode", toggles: appSettingsModel.$isGridMode)
+            // TODO - move button to toggle the app settings grid mode to homepage
         }
         // use a full screen cover instead of a sheet to provide a larger safari view
-        .fullScreenCover(isPresented: $isShowingSafariView, content: {
-            SafariView(url: URL(string: content.url) ?? URL(string: "www.apple.com/404")!)
-        })
+        .fullScreenCover(
+isPresented: $isShowingSafariView,
+content: {
+    SafariView(
+        url: URL(string: content.url) ?? URL(string: "www.apple.com/404")!
+    )
+})
     }
 }
 
 #Preview {
-    DetailView(isShowingDetailView: .constant(true), content: MockData.sampleContent)
+    DetailView(
+        isShowingDetailView: .constant(true),
+        content: MockData.sampleContent
+    )
 }

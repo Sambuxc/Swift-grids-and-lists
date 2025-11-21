@@ -9,9 +9,27 @@ import SwiftUI
 
 @main
 struct Mycologii: App {
+    @StateObject private var appSettingsModel = AppSettingsModel()
+    
     var body: some Scene {
         WindowGroup {
-            MainGridView()
+            // TODO - read up on what WindowGroup is doing and why its here by default
+            if appSettingsModel.isGridMode {
+                MainGridView()
+            } else {
+                ListView()
+            }
         }
+    }
+}
+
+#Preview {
+    @Previewable @StateObject var appSettingsModel = AppSettingsModel()
+    
+    // Preview the initial content view in dark mode. Adjust as needed.
+    if appSettingsModel.isGridMode {
+        MainGridView()
+    } else {
+        ListView()
     }
 }

@@ -7,19 +7,36 @@
 import SwiftUI
 
 struct TitleView: View {
+    @StateObject private var appSettingsModel = AppSettingsModel()
     var content: Content
+    
 
     var body: some View {
-        VStack(alignment: .center, spacing: 0) {
-            Image(content.image)
-                .resizable()
-                .frame(width: 90, height: 90)
-                .aspectRatio(contentMode: .fit)
-            Text(content.name)
-                .font(.title)
-                .scaledToFit()
-                .minimumScaleFactor(0.5)
+        let size: CGFloat = appSettingsModel.isGridMode ? 90 : 60
+        
+        if appSettingsModel.isGridMode {
+            VStack(alignment: .center, spacing: 0) {
+                ContentView(content: content, size: size)
+            }
+            .padding()
+        } else {
+            ContentView(content: content, size: size)
         }
-        .padding()
+    }
+}
+
+struct ContentView: View {
+    let content: Content
+    let size: CGFloat
+    
+    var body: some View {
+        Image(content.image)
+            .resizable()
+            .frame(width: size, height: size)
+            .aspectRatio(contentMode: .fit)
+        Text(content.name)
+            .font(.title)
+            .scaledToFit()
+            .minimumScaleFactor(0.5)
     }
 }

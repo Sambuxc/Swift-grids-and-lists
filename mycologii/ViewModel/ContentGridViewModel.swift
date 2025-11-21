@@ -19,7 +19,7 @@ final class ContentGridViewModel: ObservableObject {
             isShowingDetailView = true
         }
     }
-    
+    @Published var isGridMode: Bool = true // TODO - Move into a App Settings Model
     @Published var isShowingDetailView: Bool = false
     
     let columns: [GridItem] = [

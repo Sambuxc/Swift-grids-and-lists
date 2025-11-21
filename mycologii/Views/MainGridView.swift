@@ -40,5 +40,5 @@ struct MainGridView: View {
 }
 
 #Preview {
-    MainGridView().preferredColorScheme(.dark)
+    MainGridView()
 }

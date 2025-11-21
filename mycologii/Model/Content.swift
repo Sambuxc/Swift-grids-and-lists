@@ -13,29 +13,10 @@ struct Content: Hashable, Identifiable {
     let image: String
     let url: String
     let desc: String
-//    let taxonomy: String
 }
 
 struct MockData {
     static let mushrooms: [Content] = [
-        Content(
-            name: "Strophariaceae",
-            image: "stroph-icon",
-            url: "https://en.wikipedia.org/wiki/Strophariaceae",
-            desc:
-                "The Strophariaceae are a family of fungi in the order Agaricales. Under an older classification, the family covered 18 genera and 1316 species.[1] The species of Strophariaceae have red-brown to dark brown spore prints, while the spores themselves are smooth and have an apical germ pore. These agarics are also characterized by having a cutis-type pileipellis. Ecologically, all species in this group are saprotrophs, growing on various kinds of decaying organic matter. The family was circumscribed in 1946 by mycologists Rolf Singer and Alexander H. Smith.",
-//            taxonomy: "Family",
-        ),
-        
-        Content(
-            name: "Psilocybin",
-            image: "psilocybin-icon",
-            url: "https://en.wikipedia.org/wiki/Psilocybin",
-            desc:
-                "Psilocybin mushrooms grow throughout most of the world, and can be found in both fields and forests. Psilocybin mushrooms are saprophytes - they grow on dead plant material. Before the impact of human civilisation, psilocybin species were largely restricted to narrowly defined ecosystems. Many thrive after ecological catastrophes. Landslides, floods, hurricanes, and volcanoes all create supportive habitats for many Psilocybe mushrooms. This peculiar affection for disturbed habitats enables them to travel, following streams of debris.",
-//            taxonomy: "Species",
-        ),
-
         Content(
             name: "ARKit",
             image: "arkit",
