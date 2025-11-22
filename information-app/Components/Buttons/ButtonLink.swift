@@ -19,7 +19,7 @@ struct ButtonLink: View {
                 .padding(.vertical, 8)
                 .padding(.horizontal, 16)
         }
-        .buttonStyle(.glassProminent)
+        .buttonStyle(.glass)
         .foregroundColor(.primary)
     }
 }
