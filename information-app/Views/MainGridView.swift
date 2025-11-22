@@ -12,28 +12,21 @@ struct MainGridView: View {
 
     var body: some View {
         ZStack {
-            NavigationView {
+            NavigationStack {
                 ScrollView {
                     LazyVGrid(columns: viewModel.columns) {
-                        ForEach(MockData.data) { mushroom in
-                            TitleView(content: mushroom)
-                                .onTapGesture {
-                                    // tapping on the TitleView sets the content
-                                    // which triggers showing the sheet by using `didSet` in ViewModel
-                                    viewModel.selectedContent = mushroom
-                                }
-                                .sheet(
-                                    isPresented: $viewModel.isShowingDetailView,
-                                ) {
-                                    DetailView(
-                                        isShowingDetailView: $viewModel.isShowingDetailView,
-                                        content: viewModel.selectedContent ?? MockData.sampleContent
-                                    )
-                                }
+                        ForEach(MockData.data) { content in
+                            NavigationLink(value: content) {
+                                TitleView(content: content)
+                            }
                         }
                     }
                 }
                 .navigationTitle("📚 Informative")
+                .navigationBarTitleDisplayMode(.automatic)
+                .navigationDestination(for: Content.self) { content in
+                    DetailView(content: content)
+                }
             }
         }
     }

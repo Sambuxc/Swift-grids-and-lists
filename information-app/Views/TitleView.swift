@@ -37,6 +37,7 @@ struct ContentView: View {
             .padding(.trailing, isGridMode ? 0 : 16)
         Text(content.name)
             .font(.title)
+            .foregroundColor(Color(.label))
             .scaledToFit()
             .minimumScaleFactor(0.5)
     }

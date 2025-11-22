@@ -4,23 +4,23 @@
 //
 //  Created by Samuel Bruton on 17/11/2025.
 //
+// TODO
+// 1. Come up with another content layout mode instead of hstacking everything
+// Icon and title - Top leading aligned
+// Content - central and justified
+// CTA Btn - Bottom trailing aligned
 
 import SwiftUI
 
 struct DetailView: View {
     @StateObject private var appSettingsModel = AppSettingsModel()
-    @Binding var isShowingDetailView: Bool
     @State var isShowingSafariView: Bool = false
     var content: Content
     
     var body: some View {
         VStack() {
-            if appSettingsModel.isGridMode {
-                DismissButton(isShowing: $isShowingDetailView)
-            }
-            
             Spacer()
-        
+            
             TitleView(content: content)
             
             Text(content.desc)
@@ -45,8 +45,5 @@ content: {
 }
 
 #Preview {
-    DetailView(
-        isShowingDetailView: .constant(true),
-        content: MockData.sampleContent
-    )
+    DetailView(content: MockData.sampleContent)
 }

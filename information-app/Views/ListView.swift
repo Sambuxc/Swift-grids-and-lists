@@ -8,16 +8,15 @@
 import SwiftUI
 
 struct ListView: View {
-    @StateObject private var viewModel = ContentGridViewModel()
     
-
     var body: some View {
-        NavigationView {
+        NavigationStack {
             List {
                 ForEach(MockData.data) { mushroom in
                     NavigationLink(
+                        // another way to define destination link
+                        // GridView version declares as a stack modifier
                         destination: DetailView(
-                            isShowingDetailView: $viewModel.isShowingDetailView,
                             content: mushroom
                         )) {
                             // Instead of .sheet like on MainGridView, we are supply content via NavLink
