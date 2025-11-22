@@ -1,6 +1,6 @@
 //
 //  ContentView.swift
-//  iMushroom
+//  information-app
 //
 //  Created by Samuel Bruton on 14/11/2025.
 //
@@ -15,7 +15,7 @@ struct MainGridView: View {
             NavigationView {
                 ScrollView {
                     LazyVGrid(columns: viewModel.columns) {
-                        ForEach(MockData.mushrooms) { mushroom in
+                        ForEach(MockData.data) { mushroom in
                             TitleView(content: mushroom)
                                 .onTapGesture {
                                     // tapping on the TitleView sets the content

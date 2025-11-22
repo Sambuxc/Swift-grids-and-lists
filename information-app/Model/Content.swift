@@ -1,6 +1,6 @@
 //
 //  Content.swift
-//  iMushroom
+//  information-app
 //
 //  Created by Samuel Bruton on 14/11/2025.
 //
@@ -16,7 +16,7 @@ struct Content: Hashable, Identifiable {
 }
 
 struct MockData {
-    static let mushrooms: [Content] = [
+    static let data: [Content] = [
         Content(
             name: "ARKit",
             image: "arkit",

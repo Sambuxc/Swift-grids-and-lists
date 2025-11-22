@@ -1,6 +1,6 @@
 //
 //  ContentGridViewModel.swift
-//  mycologii
+//  information-app
 //
 //  Created by Samuel Bruton on 17/11/2025.
 //

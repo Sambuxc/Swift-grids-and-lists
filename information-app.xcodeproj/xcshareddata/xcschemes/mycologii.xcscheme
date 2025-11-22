@@ -25,9 +25,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "7E90B5CC2EC71C030037A558"
-               BuildableName = "mycologii.app"
-               BlueprintName = "mycologii"
-               ReferencedContainer = "container:mycologii.xcodeproj">
+               BuildableName = "information-app.app"
+               BlueprintName = "information-app"
+               ReferencedContainer = "container:information-app.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -54,9 +54,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "7E90B5CC2EC71C030037A558"
-            BuildableName = "mycologii.app"
-            BlueprintName = "mycologii"
-            ReferencedContainer = "container:mycologii.xcodeproj">
+            BuildableName = "information-app.app"
+            BlueprintName = "information-app"
+            ReferencedContainer = "container:information-app.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -71,9 +71,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "7E90B5CC2EC71C030037A558"
-            BuildableName = "mycologii.app"
-            BlueprintName = "mycologii"
-            ReferencedContainer = "container:mycologii.xcodeproj">
+            BuildableName = "information-app.app"
+            BlueprintName = "information-app"
+            ReferencedContainer = "container:information-app.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

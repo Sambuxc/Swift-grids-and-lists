@@ -1,6 +1,6 @@
 //
 //  ListView.swift
-//  iMushroom
+//  information-app
 //
 //  Created by Samuel Bruton on 14/11/2025.
 //
@@ -14,7 +14,7 @@ struct ListView: View {
     var body: some View {
         NavigationView {
             List {
-                ForEach(MockData.mushrooms) { mushroom in
+                ForEach(MockData.data) { mushroom in
                     NavigationLink(
                         destination: DetailView(
                             isShowingDetailView: $viewModel.isShowingDetailView,

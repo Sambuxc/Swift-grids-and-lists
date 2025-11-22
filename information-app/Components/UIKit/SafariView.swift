@@ -1,6 +1,6 @@
 //
 //  SafariView.swift
-//  mycologii
+//  information-app
 //
 //  Created by Samuel Bruton on 18/11/2025.
 //

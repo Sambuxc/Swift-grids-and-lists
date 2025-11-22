@@ -1,6 +1,6 @@
 //
 //  Title.swift
-//  iMushroom
+//  information-app
 //
 //  Created by Samuel Bruton on 14/11/2025.
 //

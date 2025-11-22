@@ -1,6 +1,6 @@
 //
-//  iMushroomApp.swift
-//  iMushroom
+//  InformationApp.swift
+//  information-app
 //
 //  Created by Samuel Bruton on 14/11/2025.
 //
@@ -8,7 +8,7 @@
 import SwiftUI
 
 @main
-struct Mycologii: App {
+struct InformationApp: App {
     @StateObject private var appSettingsModel = AppSettingsModel()
     
     var body: some Scene {

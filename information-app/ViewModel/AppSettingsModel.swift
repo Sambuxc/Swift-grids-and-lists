@@ -1,6 +1,6 @@
 //
 //  ContentGridViewModel.swift
-//  mycologii
+//  information-app
 //
 //  Created by Samuel Bruton on 17/11/2025.
 //
@@ -13,4 +13,6 @@ import Combine
 
 final class AppSettingsModel: ObservableObject {
     @Published var isGridMode: Bool = false
+    
+    // TODO - get the mobile settings dark mode
 }
