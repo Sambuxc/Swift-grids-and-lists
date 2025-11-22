@@ -16,12 +16,11 @@ struct ButtonLink: View {
             $toggles.wrappedValue.toggle()
         } label: {
             Text(title)
-                .font(.title2)
-                .fontWeight(.medium)
                 .padding(.vertical, 8)
                 .padding(.horizontal, 16)
         }
-        .buttonStyle(.bordered)
+        .buttonStyle(.glassProminent)
+        .foregroundColor(.primary)
     }
 }
 
