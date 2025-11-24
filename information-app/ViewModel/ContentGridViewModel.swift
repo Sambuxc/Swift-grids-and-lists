@@ -12,8 +12,6 @@ import SwiftUI
 import Combine
 
 final class ContentGridViewModel: ObservableObject {
-    @Published var isGridMode: Bool = true // TODO - Move into a App Settings Model
-    
     let columns: [GridItem] = [
         GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible()),
     ]

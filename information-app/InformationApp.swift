@@ -13,23 +13,25 @@ struct InformationApp: App {
     
     var body: some Scene {
         WindowGroup {
-            // TODO - read up on what WindowGroup is doing and why its here by default
             if appSettingsModel.isGridMode {
-                MainGridView()
+                MainGridView().preferredColorScheme(.dark)
             } else {
-                ListView()
+                ListView().preferredColorScheme(.dark)
             }
         }
+        .environmentObject(appSettingsModel)
     }
 }
 
 #Preview {
     @Previewable @StateObject var appSettingsModel = AppSettingsModel()
     
-    // Preview the initial content view in dark mode. Adjust as needed.
     if appSettingsModel.isGridMode {
         MainGridView()
+            .environmentObject(AppSettingsModel())
     } else {
         ListView()
+            .environmentObject(AppSettingsModel())
     }
+        
 }

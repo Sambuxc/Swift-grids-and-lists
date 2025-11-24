@@ -7,7 +7,7 @@
 import SwiftUI
 
 struct TitleView: View {
-    @StateObject private var appSettingsModel = AppSettingsModel()
+    @EnvironmentObject var appSettingsModel: AppSettingsModel
     var content: Content
 
     var body: some View {
@@ -16,7 +16,6 @@ struct TitleView: View {
         if appSettingsModel.isGridMode {
             VStack(alignment: .center, spacing: 0) {
                 ContentView(
-                    isGridMode: appSettingsModel.isGridMode,
                     content: content,
                     size: size
                 )
@@ -24,7 +23,6 @@ struct TitleView: View {
             .padding()
         } else {
             ContentView(
-                isGridMode: appSettingsModel.isGridMode,
                 content: content,
                 size: size
             )
@@ -33,7 +31,7 @@ struct TitleView: View {
 }
 
 struct ContentView: View {
-    let isGridMode: Bool
+    @EnvironmentObject var appSettingsModel: AppSettingsModel
     let content: Content
     let size: CGFloat
 
@@ -42,12 +40,33 @@ struct ContentView: View {
             .resizable()
             .frame(width: size, height: size)
             .aspectRatio(contentMode: .fit)
-            .padding(.trailing, isGridMode ? 0 : 16)
+            .padding(.trailing, appSettingsModel.isGridMode ? 0 : 8)
+            .padding(.bottom, appSettingsModel.isGridMode ? 8 : 0)
 
         Text(content.name)
-            .font(.largeTitle)
+            .font(.title2)
             .foregroundColor(Color(.label))
             .scaledToFit()
             .minimumScaleFactor(0.5)
     }
 }
+
+//#Preview {
+//    StatefulPreviewWrapper(AppSettingsModel()) { model in
+//        TitleView(appSettingsModel: model, content: Content(name: "Example", image: "example"))
+//    }
+//}
+
+//struct StatefulPreviewWrapper<Value, ContentView: View>: View {
+//    @State private var value: Value
+//    private let content: (Binding<Value>) -> ContentView
+//
+//    init(_ initialValue: Value, content: @escaping (Binding<Value>) -> ContentView) {
+//        _value = State(initialValue: initialValue)
+//        self.content = content
+//    }
+//
+//    var body: some View {
+//        content($value)
+//    }
+//}

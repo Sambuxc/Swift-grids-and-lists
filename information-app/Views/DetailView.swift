@@ -13,7 +13,7 @@
 import SwiftUI
 
 struct DetailView: View {
-    @StateObject private var appSettingsModel = AppSettingsModel()
+    @EnvironmentObject var appSettingsModel: AppSettingsModel
     @State var isShowingSafariView: Bool = false
     var content: Content
     
@@ -33,8 +33,6 @@ struct DetailView: View {
                 Spacer()
                 ButtonLink(icon: "safari", toggles: $isShowingSafariView)
             }
-            // ButtonLink(title: "Toggle Mode", toggles: appSettingsModel.$isGridMode)
-            // TODO - move button to toggle the app settings grid mode to homepage
         }
         // use a full screen cover instead of a sheet to provide a larger safari view
         .fullScreenCover(
@@ -47,6 +45,6 @@ content: {
     }
 }
 
-#Preview {
-    DetailView(content: MockData.sampleContent)
-}
+//#Preview {
+//    DetailView(content: MockData.sampleContent)
+//}

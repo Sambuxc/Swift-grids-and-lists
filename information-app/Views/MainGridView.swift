@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct MainGridView: View {
+    @EnvironmentObject var appSettingsModel: AppSettingsModel
     @StateObject private var viewModel = ContentGridViewModel()
 
     var body: some View {
@@ -15,6 +16,24 @@ struct MainGridView: View {
             NavigationStack {
                 ScrollView {
                     LazyVGrid(columns: viewModel.columns) {
+                        Button {
+                            appSettingsModel.isGridMode = false
+                        } label: {
+                            VStack {
+                                Image(systemName: "list.bullet")
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .foregroundColor(.primary)
+                                    .frame(width: 60, height: 60)
+                                    .padding(12)
+                                Text("List mode")
+                                    .font(.title2)
+                                    .foregroundColor(.primary)
+                                    .scaledToFit()
+                                    .minimumScaleFactor(0.5)
+                            }
+                            .padding()
+                        }
                         ForEach(MockData.data) { content in
                             NavigationLink(value: content) {
                                 TitleView(content: content)
@@ -22,7 +41,7 @@ struct MainGridView: View {
                         }
                     }
                 }
-                .navigationTitle("📚 Informative")
+                .navigationTitle("📚 Information")
                 .navigationBarTitleDisplayMode(.automatic)
                 .navigationDestination(for: Content.self) { content in
                     DetailView(content: content)
@@ -31,7 +50,7 @@ struct MainGridView: View {
         }
     }
 }
-
-#Preview {
-    MainGridView()
-}
+//
+//#Preview {
+//    MainGridView()
+//}
