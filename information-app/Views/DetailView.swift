@@ -19,9 +19,9 @@ struct DetailView: View {
     
     var body: some View {
         VStack() {
-            Spacer()
-            
             TitleView(content: content)
+            
+            Spacer()
             
             Text(content.desc)
                 .font(.body)
@@ -29,7 +29,10 @@ struct DetailView: View {
             
             Spacer()
             
-            ButtonLink(title: "Read more", toggles: $isShowingSafariView)
+            HStack {
+                Spacer()
+                ButtonLink(icon: "safari", toggles: $isShowingSafariView)
+            }
             // ButtonLink(title: "Toggle Mode", toggles: appSettingsModel.$isGridMode)
             // TODO - move button to toggle the app settings grid mode to homepage
         }
